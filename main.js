@@ -1,7 +1,6 @@
 console.log("PALLE");
 
-// creo campo da gioco
-    // all'interno del campo saranno generate le palle
+
 // creo tabellone punteggio che parte da zero
     // il campo si incrementa al click di una palla
 // creo pulsante reset punteggio
@@ -17,6 +16,18 @@ console.log("PALLE");
         // al click della palla viene incrementato di uno il punto
 // creo tabellone countdown
     // alla fine del count down il campo da gioco si svuota
+
+    const start = document.querySelector(".start");
+    start.addEventListener("click", function () {
+        generateBall();  
+    })
+    
+    
+    function generateBall() {
+        let ball = '<div class="ball"></div>';
+        const playground = document.querySelector(".playground");
+        playground.innerHTML = ball;
+    }
 
 
 
