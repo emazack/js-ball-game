@@ -1,0 +1,29 @@
+* {
+    box-sizing: border-box;
+    margin: 0;
+    padding: 0;
+}
+
+@keyframes movement {
+    0%   {left:0px; top:0px;}
+    25%  {left:200px; top:0px;}
+    50%  {left:200px; top:200px;}
+    75%  {left:0px; top:200px;}
+    100% {left:0px; top:0px;}
+  }
+
+.playground{
+    position: relative;
+    background-color: black;
+    height: 80vh;
+    width: 100vw;
+}
+
+.ball {
+    position: absolute;
+    height: 100px;
+    width: 100px;
+    background: red;
+    border-radius: 50%;
+    animation: movement 10s infinite;
+}
