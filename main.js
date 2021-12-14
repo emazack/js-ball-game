@@ -24,10 +24,14 @@ console.log("PALLE");
     
     
     function generateBall() {
-        let ball = '<div class="ball"></div>';
-        const playground = document.querySelector(".playground");
-        playground.innerHTML = ball;
+        let ball = new Ball(100, 100, "#000000");
+        console.log(ball);
     }
 
-
-
+    class Ball {
+        constructor(height, width, color) {
+          this.height = height;
+          this.width = width;
+          this.color = color;
+        }
+      }
