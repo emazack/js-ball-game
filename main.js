@@ -17,21 +17,19 @@ console.log("PALLE");
 // creo tabellone countdown
     // alla fine del count down il campo da gioco si svuota
 
-    const start = document.querySelector(".start");
-    start.addEventListener("click", function () {
-        generateBall();  
-    })
-    
-    
-    function generateBall() {
-        let ball = new Ball(100, 100, "#000000");
-        console.log(ball);
-    }
+    // const start = document.querySelector(".start");
+    // start.addEventListener("click", function () {
+    //     console.log("prova");  
+    // });
 
-    class Ball {
-        constructor(height, width, color) {
-          this.height = height;
-          this.width = width;
-          this.color = color;
-        }
-      }
+    import { BallManager } from "./BallManager";
+
+    const ballManager = new BallManager();
+    const newBall = ballManager.createBall();
+    console.log(newBall);
+    
+
+
+
+
+    
