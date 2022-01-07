@@ -3,4 +3,4 @@ class Ball {
     color: string;
     dx: number;
     dy: number;
-}
+} 

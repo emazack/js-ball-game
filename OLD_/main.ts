@@ -26,10 +26,4 @@ console.log("PALLE");
 
     const ballManager = new BallManager();
     const newBall = ballManager.createBall();
-    console.log(newBall);
-    
-
-
-
-
-    
+    console.log(newBall);     
