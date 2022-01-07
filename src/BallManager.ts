@@ -3,6 +3,8 @@
     // con colore randomico
     // con velocità randomica
 
+    import { Ball } from "./Ball";
+
  export class BallManager {
 
     createBall() : Ball {
