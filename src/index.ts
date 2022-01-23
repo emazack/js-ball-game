@@ -22,8 +22,13 @@ console.log("PALLE");
     //     console.log("prova");  
     // });
 
+    import { Ball } from "./Ball";
     import { BallManager } from "./BallManager";
 
-    const ballManager = new BallManager();
-    const newBall = ballManager.createBall();
-    console.log(newBall);     
+    const myPlayground: HTMLCanvasElement = document.querySelector(".canvas");
+    const ballManager: BallManager = new BallManager();
+    const newBall: Ball = ballManager.create();
+    ballManager.insert(myPlayground, newBall);
+    ballManager.draw(newBall);
+    
+    
