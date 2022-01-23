@@ -27,20 +27,18 @@ export class BallManager {
   }
   
   draw(playground: HTMLCanvasElement, ball: Ball): void {
-    let currentPostionLeft: number = parseInt(ball.element.style.left);
-    let currentPostionTop: number = parseInt(ball.element.style.top);
-    let newDy: number = ball.dy;
-    let newDx: number = ball.dx;
+
+    console.log("inizio draw");
     
-    this.move(ball, newDx, newDy, currentPostionLeft, currentPostionTop);
-    this.changeDirection(playground, ball, currentPostionLeft, currentPostionTop);
-    console.log("dopo il change");
+    console.log(ball.dx);
     console.log(ball.dy);
+    
+    
+    this.move(ball, ball.dx, ball.dy , parseInt(ball.element.style.left), parseInt(ball.element.style.top));
+    this.changeDirection(playground, ball, parseInt(ball.element.style.left), parseInt(ball.element.style.top));
     setTimeout(() => {
       this.draw(playground, ball);
-    }, 100);
-    console.log("dopo draw");
-    console.log(ball.dy);    
+    }, 1000 / 60);  
   }
   
   delete(): void {
@@ -48,25 +46,41 @@ export class BallManager {
   }
   
   move(ball: Ball, dx: number, dy:number, currentPostionLeft: number, currentPostionTop: number): void {
+    console.log("Prima di move");
+    console.log(ball.dx);
+    console.log(ball.dy);
+    
     ball.element.style.left = `${currentPostionLeft + (dx)}px`;    
     ball.element.style.top = `${currentPostionTop + (dy)}px`;
-    
+
+    console.log("dopo di move");
+    console.log(ball.dx);
+    console.log(ball.dy);
+
   }
   
   changeDirection(playground: HTMLCanvasElement, ball: Ball, currentPostionLeft: number, currentPostionTop: number): void {
 
-    if (currentPostionLeft < 0 || currentPostionLeft > playground.offsetWidth - ball.radius) {
-      ball.dx = - (ball.dx);
+    console.log("Prima di change");
+    console.log(ball.dx);
+    console.log(ball.dy);
+    if (currentPostionLeft < 0 || currentPostionLeft > (playground.offsetWidth - ball.radius)) {
+      console.log("entro per cambiare il dx");
+      ball.dx = -ball.dx;
     }
-    if (currentPostionTop < 0 || currentPostionTop > playground.offsetHeight - ball.radius) {
-      console.log("sei fuori dal canvas con questa posizione:");
-      console.log("posizione:");
+    if (currentPostionTop < 0 || currentPostionTop > (playground.offsetHeight - ball.radius)) {
+      console.log("entro per cambiare il dy");
+      console.log("la position: top attuale è questa:");
       console.log(currentPostionTop);
-      console.log("grandezza del playgrond:");
+      console.log("la grandezza in altezza del canvas è questa");
       console.log(playground.offsetHeight - ball.radius);
-      
-      ball.dy = - (ball.dy);      
+      console.log(`Pertanto se sono entrato dentro qui questo numero ${currentPostionTop} è piu grande di questo ${playground.offsetHeight - ball.radius}`);
+      ball.dy = -ball.dy;      
     }
+
+    console.log("dopo di change");
+    console.log(ball.dx);
+    console.log(ball.dy);
 
   }
 }
