@@ -27,8 +27,8 @@ console.log("PALLE");
 
     const myPlayground: HTMLCanvasElement = document.querySelector(".canvas");
     const ballManager: BallManager = new BallManager();
-    const newBall: Ball = ballManager.create();
+    const newBall: Ball = ballManager.create(10, 10);
     ballManager.insert(myPlayground, newBall);
-    ballManager.draw(newBall);
+    ballManager.draw(myPlayground, newBall);
     
     
