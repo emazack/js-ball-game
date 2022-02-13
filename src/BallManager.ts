@@ -31,8 +31,8 @@ export class BallManager {
   }
   
   insert(playground: HTMLCanvasElement, ball: Ball): HTMLDivElement {
-    ball.element.style.left = `5px`;    
-    ball.element.style.top = `7px`;
+    ball.element.style.left = `1px`;    
+    ball.element.style.top = `10px`;
     return playground.appendChild(ball.element);
   }
   
