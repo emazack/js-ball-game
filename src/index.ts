@@ -33,6 +33,8 @@ console.log("PALLE");
     ballManager.insert(myPlayground, newBall);
     ballManager.draw(myPlayground, newBall);
     ballManager.click(newBall);
+    gameModeManager.selectDifficulty();
+    gameModeManager.startGame();
 
     
     
